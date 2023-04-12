@@ -31,7 +31,6 @@
             ],
             "styles": [
               "src/styles.scss",
-              // add bootstrap scss
               "node_modules/bootstrap/scss/bootstrap.scss"
             ],
             "scripts": []
@@ -58,7 +57,13 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
