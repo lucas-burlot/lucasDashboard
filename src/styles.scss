@@ -2,15 +2,22 @@
   .login, .image {
     min-height: 100vh;
   }
-  .bg-image
-  {
+
+  .bg-image {
     background-image: url('https://bootstrapious.com/i/snippets/sn-page-split/bg.jpg');
     background-size: cover;
     background-position: center center;
   }
-  button{
+
+  button {
     font-size: 15px;
     width: 125px;
   }
 }
+
+input.form-control.ng-invalid.ng-touched, select.form-control.ng-invalid.ng-touched, .custom-file-label.ng-invalid.ng-touched {
+  border: 1px solid red !important;
+}
+
+
 
