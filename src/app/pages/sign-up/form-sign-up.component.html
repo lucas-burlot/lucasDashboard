@@ -7,31 +7,32 @@
         <div class="container">
           <div class="row">
             <div class="col-10 mx-auto">
-              <h3 class="display-4">S'inscrire</h3>
-              <p class="text-muted mb-4">Créer un utilisateur pour avoir accès au dashboard</p>
+              <h3 class="display-4">Sign up</h3>
+              <p class="text-muted mb-4">Create a user to access of the app</p>
             </div>
             <div class="col-5 ms-auto">
               <div class="form-group mb-3">
-                <input id="firstname" formControlName="firstname" type="text" placeholder="Prénom"  class="form-control rounded-pill border-0 shadow-sm px-4">
+                <input id="firstname" formControlName="firstname" type="text" placeholder="Firstname"  class="form-control rounded-pill border-0 shadow-sm px-4">
               </div>
             </div>
             <div class="col-5 me-auto">
               <div class="form-group mb-3">
-                <input id="lastname" formControlName="lastname" type="text" placeholder="Nom de famille"  class="form-control rounded-pill border-0 shadow-sm px-4">
+                <input id="lastname" formControlName="lastname" type="text" placeholder="Lastname"  class="form-control rounded-pill border-0 shadow-sm px-4">
               </div>
             </div>
             <div class="col-10 mx-auto">
               <div class="form-group mb-3">
-                <input id="email" formControlName="email" type="email" placeholder="Adresse email"  class="form-control rounded-pill border-0 shadow-sm px-4">
+                <input id="email" formControlName="email" type="email" placeholder="Email address"  class="form-control rounded-pill border-0 shadow-sm px-4">
               </div>
               <div class="form-group mb-3">
-                <input id="password" formControlName="password" type="password" placeholder="Mot de passe"  class="form-control rounded-pill border-0 shadow-sm px-4">
+                <input id="password" formControlName="password" type="password" placeholder="Password"  class="form-control rounded-pill border-0 shadow-sm px-4">
+                <p class="ms-3 mt-2 text-danger" *ngIf="formSignUp.get('password')?.touched && formSignUp.get('password')?.errors?.['minlength']">Votre mot de passe doit faire minimum 6 caractères</p>
               </div>
               <div class="mb-3 ms-2">
-                <a routerLink="/sign-in" routerLinkActive="active">Vous avez déjà un compte ?</a>
+                <a routerLink="/sign-in" routerLinkActive="active">You already have an account ?</a>
               </div>
               <div class="col-12 mt-4 text-center">
-                <button type="submit" class="btn btn-primary btn-block rounded-pill shadow-sm">S'inscrire</button>
+                <button type="submit" class="btn btn-primary btn-block rounded-pill shadow-sm">Sign in</button>
               </div>
             </div>
             </div>
@@ -39,5 +40,8 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="loader-container" *ngIf="isLoading">
+    <div class="loader"></div>
   </div>
 </form>

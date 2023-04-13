@@ -15,8 +15,37 @@
   }
 }
 
+/* Gestion des erreurs - Formulaire en rouge */
 input.form-control.ng-invalid.ng-touched, select.form-control.ng-invalid.ng-touched, .custom-file-label.ng-invalid.ng-touched {
   border: 1px solid red !important;
+}
+
+/* Loader */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 9999;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Couleur de la bordure */
+  border-top: 16px solid #2f56; /* Couleur de la bordure supérieure */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 

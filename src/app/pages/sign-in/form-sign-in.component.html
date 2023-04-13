@@ -1,4 +1,4 @@
-<form [formGroup]="formSignIn">
+<form [formGroup]="formSignIn" (submit)="onSubmit()">
   <div class="user-form container-fluid">
     <div class="row no-gutter">
       <div class="col-md-6 d-none d-md-flex bg-image"></div>
@@ -7,21 +7,21 @@
           <div class="container">
             <div class="row">
               <div class="col-10 mx-auto">
-                <h3 class="display-4">Se connecter</h3>
-                <p class="text-muted mb-4">Connectez-vous pour accéder au dashboard</p>
+                <h3 class="display-4">Sign in</h3>
+                <p class="text-muted mb-4">Login to access the app</p>
               </div>
               <div class="col-10 mx-auto">
                 <div class="form-group mb-3">
                   <input id="inputEmail" formControlName="email" type="email" placeholder="Adresse email"  class="form-control rounded-pill border-0 shadow-sm px-4">
                 </div>
                 <div class="form-group mb-3">
-                  <input id="inputPassword" formControlName="password" type="password" placeholder="Mot de passe"  class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
+                  <input id="inputPassword" formControlName="password" type="password" placeholder="Mot de passe"  class="form-control rounded-pill border-0 shadow-sm px-4">
                 </div>
                 <div class="mb-3 ms-2">
-                  <a routerLink="/sign-up" routerLinkActive="active">Vous n'avez pas de compte ?</a>
+                  <a routerLink="/sign-up" routerLinkActive="active">You do not have an account ?</a>
                 </div>
                 <div class="col-12 mt-4 text-center">
-                  <button type="button" class="btn btn-primary btn-block rounded-pill shadow-sm">Se connecter</button>
+                  <button type="submit" class="btn btn-primary btn-block rounded-pill shadow-sm">Sign in</button>
                 </div>
               </div>
             </div>
@@ -29,5 +29,8 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="loader-container" *ngIf="isLoading">
+    <div class="loader"></div>
   </div>
 </form>

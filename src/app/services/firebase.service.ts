@@ -31,4 +31,20 @@ export class FirebaseService {
       })
     );
   }
+
+  signIn(user: User): Observable<any> {
+    return from(this.authClient.signInWithEmailAndPassword(user.email, user.password)).pipe(
+      switchMap((result: any) => {
+        if (result.user) {
+          return from(
+            this.firestoreClient
+              .collection('users')
+              .doc(result.user.uid)
+              .get()
+          )
+        }
+        return of(null);
+      })
+    );
+  }
 }
