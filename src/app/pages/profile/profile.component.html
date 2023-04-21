@@ -1,0 +1,36 @@
+<div class="edit-profile">
+  <div class="edit-profile-form">
+    <h1 class="edit-profile-title mt-5">Update my profile</h1>
+    <div class="row equal-height">
+      <div class="col-md-6">
+        <form [formGroup]="formProfilInfo" (ngSubmit)="updateProfile()">
+          <div class="form-group">
+            <label class="form-label" for="first-name"><span class="form-icon"><i class="fas fa-user"></i></span>Firstname</label>
+            <input class="form-input" formControlName="firstname" type="text" id="first-name" name="first-name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="last-name"><span class="form-icon"><i class="fas fa-user"></i></span>Lastname</label>
+            <input class="form-input" formControlName="lastname" type="text" id="last-name" name="last-name">
+          </div>
+          <div class="form-actions">
+            <button class="btn-primary" type="submit">Update</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <div class="profile-preview">
+          <div class="profile-image">
+            <img src="https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-PNG-Image-File.png" alt="Profile Picture">
+          </div>
+          <div class="profile-info">
+            <h2>{{ userData.firstname }} {{ userData.lastname }}</h2>
+            <p>Email address : {{ userData.email }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="loader-container" *ngIf="isLoading">
+  <div class="loader"></div>
+</div>

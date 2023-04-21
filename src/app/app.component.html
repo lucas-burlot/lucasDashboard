@@ -1,1 +1,4 @@
-<router-outlet></router-outlet>
+<div [ngClass]="isNotSignInOrSignUp() ? 'd-flex' : ''">
+  <app-sidenav *ngIf="isNotSignInOrSignUp()"></app-sidenav>
+  <router-outlet></router-outlet>
+</div>

@@ -11,11 +11,19 @@ import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import {ReactiveFormsModule} from "@angular/forms";
 import {ToastrModule} from "ngx-toastr";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { HomeComponent } from './pages/home/home.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { ApplicationsComponent } from './pages/applications/applications.component';
 @NgModule({
   declarations: [
     AppComponent,
     FormSignUpComponent,
-    FormSignInComponent
+    FormSignInComponent,
+    HomeComponent,
+    SidenavComponent,
+    ProfileComponent,
+    ApplicationsComponent
   ],
   imports: [
     BrowserModule,

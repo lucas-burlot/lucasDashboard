@@ -1,0 +1,19 @@
+<nav id="sidebar">
+  <div class="p-4 pt-5 h-100 d-flex flex-column">
+    <h1><a routerLink="/home" routerLinkActive="active" class="logo">MyJob</a></h1>
+    <div class="d-flex flex-column justify-content-between h-100">
+      <ul class="list-unstyled mb-5">
+        <li>
+          <a routerLink="/home" routerLinkActive="active">Home</a>
+        </li>
+        <li>
+          <a routerLink="/applications" routerLinkActive="active">My applications</a>
+        </li>
+        <li>
+          <a routerLink="/profile" routerLinkActive="active">My profile</a>
+        </li>
+      </ul>
+        <span class="ms-auto me-auto w-100 logout-button d-flex justify-content-center" (click)="disconnectUser()">Disconnect</span>
+    </div>
+  </div>
+</nav>
