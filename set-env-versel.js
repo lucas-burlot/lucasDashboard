@@ -1,4 +1,4 @@
-import { writeFile } from 'fs';
+const fs = require('fs');
 const targetPath = './src/environments/environment.prod.ts';
 
 require('dotenv').config();
@@ -11,11 +11,22 @@ export const environment = {
   storageBucket: "${process.env.storageBucket}",
   apiKey: "${process.env.apiKey}",
   authDomain: "${process.env.authDomain}",
-  messagingSenderId: "${process.env.messagingSenderId}"
+  messagingSenderId: "${process.env.messagingSenderId}",
+  application_status: [
+    { name: 'Pending' },
+    { name: 'Validated' },
+    { name: 'Refused' },
+  ],
+  application_category: [
+    { name: 'CDI' },
+    { name: 'CDD' },
+    { name: 'Apprenticeship contract', },
+    { name: 'professionalization contract'}
+  ],
 };
 `;
 
-writeFile(targetPath, environmentFileContent, function (err) {
+fs.writeFile(targetPath, environmentFileContent, function (err) {
   if (err) {
     console.log(err);
   }
