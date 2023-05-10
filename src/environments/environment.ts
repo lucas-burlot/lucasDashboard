@@ -1,12 +1,10 @@
 export const environment = {
-  firebase: {
-    projectId: '',
-    appId: '',
-    storageBucket: '',
-    apiKey: '',
-    authDomain: '',
-    messagingSenderId: '',
-  },
+  projectId: '',
+  appId: '',
+  storageBucket: '',
+  apiKey: '',
+  authDomain: '',
+  messagingSenderId: '',
   production: false,
   application_status: [
     { name: 'Pending' },
