@@ -39,14 +39,7 @@ registerLocaleData(localeFr);
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp({
-      apiKey: environment.apiKey,
-      authDomain: environment.authDomain,
-      projectId: environment.projectId,
-      storageBucket: environment.storageBucket,
-      messagingSenderId: environment.messagingSenderId,
-      appId: environment.appId,
-    }),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     ReactiveFormsModule,
