@@ -12,8 +12,8 @@ export const environment = {
     storageBucket: "${process.env.storageBucket}",
     apiKey: "${process.env.apiKey}",
     authDomain: "${process.env.authDomain}",
-    messagingSenderId: "${process.env.messagingSenderId}",
-  }
+    messagingSenderId: "${process.env.messagingSenderId}"
+  },
   application_status: [
     { name: 'Pending' },
     { name: 'Validated' },
@@ -24,7 +24,7 @@ export const environment = {
     { name: 'CDD' },
     { name: 'Apprenticeship contract', },
     { name: 'professionalization contract'}
-  ],
+  ]
 };
 `;
 
