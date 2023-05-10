@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FirebaseService} from "../../services/firebase.service";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-sidenav',
@@ -7,7 +7,7 @@ import {FirebaseService} from "../../services/firebase.service";
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent {
-  constructor(private firebaseService: FirebaseService) {}
+  constructor(private firebaseService: AuthService) {}
 
   disconnectUser(): void{
     this.firebaseService.signOut();

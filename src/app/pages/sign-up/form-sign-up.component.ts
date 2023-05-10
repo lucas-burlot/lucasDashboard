@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FirebaseService} from "../../services/firebase.service";
+import {AuthService} from "../../services/auth.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ToastrService} from "ngx-toastr";
 import {Router} from "@angular/router";
@@ -20,7 +20,7 @@ export class FormSignUpComponent implements OnInit{
     email: this.fb.control('', [Validators.required, Validators.maxLength(255), notSpaceValidator]),
     password: this.fb.control('', [Validators.required, Validators.maxLength(255), Validators.minLength(6), notSpaceValidator])
   })
-  constructor(private firebaseService: FirebaseService, private fb: FormBuilder, private toastr: ToastrService, private router: Router) {}
+  constructor(private firebaseService: AuthService, private fb: FormBuilder, private toastr: ToastrService, private router: Router) {}
 
   ngOnInit(): void {}
 

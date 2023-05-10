@@ -15,6 +15,15 @@ import { HomeComponent } from './pages/home/home.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ApplicationsComponent } from './pages/applications/applications.component';
+import { CreateUpdateApplicationComponent } from './pages/applications/create-application/create-update-application.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { DateFrPipe } from 'src/pipes/date-fr.pipe';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
+// registerLocalData sert à définir la langue par défaut de l'application
+registerLocaleData(localeFr);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +32,9 @@ import { ApplicationsComponent } from './pages/applications/applications.compone
     HomeComponent,
     SidenavComponent,
     ProfileComponent,
-    ApplicationsComponent
+    ApplicationsComponent,
+    CreateUpdateApplicationComponent,
+    DateFrPipe
   ],
   imports: [
     BrowserModule,
@@ -33,9 +44,12 @@ import { ApplicationsComponent } from './pages/applications/applications.compone
     AngularFireAuthModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+ }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {FirebaseService} from "../../services/firebase.service";
+import {AuthService} from "../../services/auth.service";
 import {ToastrService} from "ngx-toastr";
 import {Router} from "@angular/router";
 import {notSpaceValidator} from "../../validators/noSpace.validator";
@@ -18,7 +18,7 @@ export class FormSignInComponent {
     email: this.fb.control('', [Validators.required, Validators.maxLength(255), notSpaceValidator]),
     password: this.fb.control('', [Validators.required, Validators.maxLength(255), notSpaceValidator])
   })
-  constructor(private fb: FormBuilder, private firebaseService: FirebaseService, private toastr: ToastrService, private router: Router) {}
+  constructor(private fb: FormBuilder, private firebaseService: AuthService, private toastr: ToastrService, private router: Router) {}
 
   onSubmit(): void{
     if(this.formSignIn.valid){
@@ -27,7 +27,7 @@ export class FormSignInComponent {
         next: (result: DocumentSnapshot<DocumentData> | null) => {
           if(result){
             this.firebaseService.isLoggedIn = true;
-            sessionStorage.setItem('user', JSON.stringify(result.data()));
+            localStorage.setItem('user', JSON.stringify(result.data()));
             this.toastr.success('Welcome', 'Success');
             this.isLoading = false;
             this.router.navigate(['/']);

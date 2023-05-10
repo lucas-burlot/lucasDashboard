@@ -8,14 +8,15 @@ import {Router} from "@angular/router";
 @Injectable({
   providedIn: 'root'
 })
-export class FirebaseService {
+export class AuthService {
   public isLoggedIn: boolean = false;
+  public user: User | null = null;
 
   constructor(private databaseClient: AngularFireDatabase,
               private authClient: AngularFireAuth,
               private firestoreClient: AngularFirestore,
               private router: Router) {
-    this.isLoggedIn = !!sessionStorage.getItem('user');
+    this.isLoggedIn = !!localStorage.getItem('user');
   }
 
   signUp(user: User): Observable<void | null> {
@@ -57,7 +58,8 @@ export class FirebaseService {
 
   signOut(): void {
     this.authClient.signOut().then(() => {
-      sessionStorage.removeItem('user');
+      localStorage.removeItem('user');
+      this.user = null;
       this.isLoggedIn = false;
       this.router.navigate(['/sign-in']);
     });

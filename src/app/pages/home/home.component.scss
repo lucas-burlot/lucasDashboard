@@ -1,7 +1,8 @@
 $primary-color: #866ec7;
 $secondary-color: #f3f3f3;
 $warning-color: #ffa500;
-$total-color: #1e90ff ;
+$validated-color: #28a745 ;
+$rejected-color: #ff3333;
 
 .status-card {
   height: 150px;
@@ -17,7 +18,6 @@ $total-color: #1e90ff ;
     font-size: 3rem;
     line-height: 1.2;
     margin-bottom: 0;
-    color: $primary-color;
   }
 
   .card-footer {
@@ -80,9 +80,12 @@ $total-color: #1e90ff ;
   }
 
   &.bg-pending {
-
+    outline: $warning-color solid 1px;
     .card-icon {
       background-color: $warning-color;
+    }
+    .card-text {
+      color: $warning-color;
     }
 
     .card-title {
@@ -90,22 +93,32 @@ $total-color: #1e90ff ;
     }
   }
 
-  &.bg-total {
+  &.bg-validated {
+    outline: $validated-color solid 1px;
     .card-icon {
-      background-color: $total-color;
+      background-color: $validated-color;
     }
+    .card-text {
+      color: $validated-color;
+    }
+
     .card-title {
-      color: $total-color;
+      color: $validated-color;
     }
   }
 
   &.bg-rejected {
+    outline: $rejected-color solid 1px;
     .card-icon {
-      background-color: #ff3333;
+      background-color: $rejected-color;
+    }
+
+    .card-text {
+      color: $rejected-color;
     }
 
     .card-title {
-      color: #ff3333;
+      color: $rejected-color;
     }
   }
 
