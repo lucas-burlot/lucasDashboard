@@ -6,12 +6,14 @@ require('dotenv').config();
 const environmentFileContent = `
 export const environment = {
   production: true,
-  projectId: "${process.env.projectId}",
-  appId: "${process.env.appId}",
-  storageBucket: "${process.env.storageBucket}",
-  apiKey: "${process.env.apiKey}",
-  authDomain: "${process.env.authDomain}",
-  messagingSenderId: "${process.env.messagingSenderId}",
+  firebase: {
+    projectId: "${process.env.projectId}",
+    appId: "${process.env.appId}",
+    storageBucket: "${process.env.storageBucket}",
+    apiKey: "${process.env.apiKey}",
+    authDomain: "${process.env.authDomain}",
+    messagingSenderId: "${process.env.messagingSenderId}",
+  }
   application_status: [
     { name: 'Pending' },
     { name: 'Validated' },
