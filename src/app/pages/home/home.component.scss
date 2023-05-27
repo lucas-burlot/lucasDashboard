@@ -4,6 +4,12 @@ $warning-color: #ffa500;
 $validated-color: #28a745 ;
 $rejected-color: #ff3333;
 
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .status-card {
   height: 150px;
 

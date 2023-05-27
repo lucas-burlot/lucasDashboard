@@ -49,7 +49,7 @@
         <div class="card-body">
           <h5 class="card-title">Applications by statut</h5>
           <div class="chart-container">
-            <canvas id="status-chart"></canvas>
+            <plotly-plot [data]="graphByStatus.data" [layout]="graphByStatus.layout"></plotly-plot>
           </div>
         </div>
         <div class="card-footer d-flex justify-content-between align-items-center">
@@ -60,9 +60,9 @@
     <div class="col-md-6">
       <div class="card shadow">
         <div class="card-body">
-          <h5 class="card-title">Applications by date</h5>
-          <div class="chart-container">
-            <canvas id="date-chart"></canvas>
+          <h5 class="card-title">Applications by category</h5>
+          <div class="chart-container" *ngIf="graphByStatus?.data">
+            <plotly-plot [data]="graphByCategory.data" [layout]="graphByCategory.layout"></plotly-plot>
           </div>
         </div>
         <div class="card-footer d-flex justify-content-between align-items-center">

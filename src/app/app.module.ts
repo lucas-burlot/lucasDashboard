@@ -20,6 +20,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { DateFrPipe } from 'src/pipes/date-fr.pipe';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import * as PlotlyJS from 'plotly.js-dist-min';
+import { PlotlyModule } from 'angular-plotly.js';
+
+PlotlyModule.plotlyjs = PlotlyJS;
 
 // registerLocalData sert à définir la langue par défaut de l'application
 registerLocaleData(localeFr);
@@ -45,7 +49,8 @@ registerLocaleData(localeFr);
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    NgxPaginationModule
+    NgxPaginationModule,
+    PlotlyModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,11 +11,10 @@ import {Application, ApplicationCategory, ApplicationStatus} from "../app.models
 export class ApplicationService {
   public isLoggedIn: boolean = false;
 
-  constructor(private databaseClient: AngularFireDatabase, private authClient: AngularFireAuth,
-              private firestoreClient: AngularFirestore, private router: Router) {
+  constructor(private firestoreClient: AngularFirestore) {
   }
 
-  createApplication(application: Application){
+  createApplication(application: Application): Observable<void>{
     const applicationId = this.firestoreClient.createId();
     application.uid = applicationId;
     return from(
@@ -56,11 +55,24 @@ export class ApplicationService {
       );
   }
 
-  deleteApplication(applicationId: string) {
+  getApplicationsWithCategoryAndUser(uid: string, category: string): Observable<Application[]> {
+    return this.firestoreClient
+      .collection('applications', ref => ref.where('user_uid', '==', uid).where('application_category', '==', category))
+      .snapshotChanges()
+      .pipe(
+        map((actions) =>
+          actions.map((a) => {
+            return a.payload.doc.data() as Application;
+          })
+        )
+      );
+  }
+
+  deleteApplication(applicationId: string): Observable<void> {
     return from(this.firestoreClient.collection('applications').doc(applicationId).delete());
   }
 
-  updateApplication(application: Application){
+  updateApplication(application: Application): Observable<void>{
     return from(this.firestoreClient.collection('applications').doc(application.uid).update(application));
   }
 

@@ -26,3 +26,11 @@ export interface Application {
     application_contact_email: string;
     application_status: ApplicationStatus;
 }
+
+export interface Graph {
+    data: [{}];
+    layout: {
+        height: number;
+        width: number;
+    };
+}
