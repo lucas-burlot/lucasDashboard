@@ -1,27 +1,44 @@
 # LucasDashboard
+MyJob est un site web permettant de gérer ses candidatures de manière simple et efficace. Il permet de créer, modifier, supprimer et visualiser ses candidatures. Il permet également de visualiser des statistiques sur ses candidatures.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+Le projet est déployer avec Vercel, pourquoi Vercel ?
+- Vercel est un service de déploiement continu et d'hébergement web qui permet aux développeurs de sites web de déployer des sites web facilement et rapidement.
 
-## Development server
+Lien du site en ligne : https://myjob-chi.vercel.app
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+### Comment installer le projet
+```
+npm install
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Comment lancer le projet
+```
+npm run serve
+```
 
-## Build
+### Listes des librairies utilisées
+- Angular
+- Bootstrap
+- Plotly.js (Une librairie très complète pour la création de graphiques / statistiques)
+- ngx-pagination (une librairie facile à utiliser pour la pagination et elle est bien intégrer avec Angular)
+- ngx-toastr (une librairie facile à utiliser pour les notifications et elle est bien intégrer avec Angular)
+- fontawesome (une librairie d'icônes très complète)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+### Pages
+- Page d'accueil (Dahsboard avec les graphiques + données concernant les candidatures)
+- Page de connexion
+- Page d'inscription
+- Page de profil (Modification / Visualisation)
+- Listing de ses candidatures
+- Page de création d'une candidature
+- Page de modification d'une candidature
+- Page de suppression d'une candidature (Modal avec confirmation)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Fonctionnalités spécifique
+- Utilisation de RxJS pour la gestion des données (*Complexe mais très puissant si bien utilisé*)
+- Utilisations de guards pour la gestion des routes (*Permet de protéger les routes et de rediriger l'utilisateur si il n'est pas connecté*)
+- Utilisation de services pour la gestion des données (*Permet de centraliser les données et de les partager entre les composants*)
+- Utilisation de pipes pour la gestion des dates en français + les paginations (*Permet de formater les données avant de les afficher*)
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
